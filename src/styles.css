@@ -1,0 +1,64 @@
+* {
+    box-sizing: border-box;
+}
+
+.Slideshow {
+    width: 500px;
+    position: relative;
+    margin: auto;
+}
+
+.Slide img {
+    width: 100%;
+}
+
+a {
+    position: absolute; /*positioned relative to the nearest relative element*/
+    top: 50%; /*makes it in the middle of the main div*/
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: #f2f2f2;
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 0 3px 3px 0;
+}
+
+.next {
+    right: 0;
+}
+
+.Text {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+}
+
+.Dots {
+    text-align: center;
+}
+
+.dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.Slide {
+    display: none;
+}
+
+.active { /*when the corresponding slide is chosen, this dot is darkened slightly to show that it is the dot of that slide*/
+  background-color: #717171;
+}
+
+.Slide.show {
+    display: block;
+}
