@@ -48,8 +48,6 @@ function showSlide(n) {
 
     dot[slideIndex - 1].classList.add('active');
     slide[slideIndex - 1].classList.add('show');
-    console.log(dot[slideIndex - 1].classList);
-    console.log(slide[slideIndex - 1].classList);
 }
 
 function startInterval() {
