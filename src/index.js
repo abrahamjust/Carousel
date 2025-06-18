@@ -1,5 +1,7 @@
 import './styles.css';
 
+let intervalId;
+
 let slideIndex = 1;
 let prev = document.querySelector(".previous");
 let next = document.querySelector(".next");
@@ -7,6 +9,7 @@ prev.addEventListener('click', previousSlide);
 next.addEventListener('click', nextSlide);
 
 showSlide(slideIndex);
+startInterval();
 
 function currentSlide(n) {
     slideIndex = n;
@@ -16,11 +19,13 @@ function currentSlide(n) {
 function previousSlide() {
     slideIndex--;
     showSlide(slideIndex);
+    resetInterval();
 }
 
 function nextSlide() {
     slideIndex++;
     showSlide(slideIndex);
+    resetInterval();
 }
 
 function showSlide(n) {
@@ -45,6 +50,15 @@ function showSlide(n) {
     slide[slideIndex - 1].classList.add('show');
     console.log(dot[slideIndex - 1].classList);
     console.log(slide[slideIndex - 1].classList);
+}
+
+function startInterval() {
+    intervalId = setInterval(nextSlide, 5000);
+}
+
+function resetInterval() {
+    clearInterval(intervalId);
+    startInterval();
 }
 
 // optional: expose currentSlide globally if needed in HTML
